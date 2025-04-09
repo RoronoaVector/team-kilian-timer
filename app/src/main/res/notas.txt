@@ -1,0 +1,17 @@
+// Obtener referencia al NumberPicker
+NumberPicker numberPicker = findViewById(R.id.number_picker);
+
+// Configurar el NumberPicker
+numberPicker.setMinValue(0);
+numberPicker.setMaxValue(59);
+
+// Establecer el formato para el NumberPicker
+numberPicker.setFormatter(new NumberPicker.Formatter() {
+    @Override
+    public String format(int value) {
+        // Formatear los minutos y los segundos
+        int minutes = value / 60;
+        int seconds = value % 60;
+        return String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+    }
+});

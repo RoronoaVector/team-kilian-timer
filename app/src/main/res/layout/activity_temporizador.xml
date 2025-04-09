@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
+
+    <!-- Resumen de asaltos (arriba a la izquierda) -->
+    <TextView
+        android:id="@+id/tv_resumen_asaltos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:text="2 x 7m x 30s"
+        android:textSize="20sp"
+        android:textColor="#999999" />
+
+    <!-- Hora del sistema (arriba a la derecha) -->
+    <TextView
+        android:id="@+id/tv_hora_sistema"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:text="12:00"
+        android:textSize="20sp"
+        android:textColor="#999999" />
+
+    <!-- Contenedor principal (centrado verticalmente) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Espacio superior (20%) -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <!-- Contenedor del temporizador y asaltos (60%) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Número de asaltos -->
+            <TextView
+                android:id="@+id/tv_asaltos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asaltos restantes: 3"
+                android:textSize="24sp"
+                android:textColor="#999999"
+                android:textStyle="bold" />
+
+            <!-- Temporizador -->
+            <TextView
+                android:id="@+id/tv_temporizador"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="00:00"
+                android:textSize="60sp"
+                android:textColor="#999999"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Espacio inferior reducido para botones -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Botones de navegación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_volver_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_volver_configuracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Configuración"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_volver_presets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Presets"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
