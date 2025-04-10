@@ -29,7 +29,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="-"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
         <TextView
             android:id="@+id/tv_numero_asaltos"
@@ -45,7 +49,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="+"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,7 +68,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="-"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
         <TextView
             android:id="@+id/tv_duracion_asalto"
@@ -76,7 +88,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="+"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
     </LinearLayout>
 
     <LinearLayout
@@ -91,7 +107,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="-"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
         <TextView
             android:id="@+id/tv_descanso"
@@ -107,7 +127,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="+"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
     </LinearLayout>
 
     <!-- Aquí se agrega un LinearLayout horizontal para los dos botones -->
@@ -124,9 +148,11 @@
             android:text="Iniciar Entrenamiento"
             android:textSize="18sp"
             android:padding="16dp"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
-            android:layout_marginEnd="8dp" />
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:layout_marginEnd="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
         <Button
             android:id="@+id/btn_volver_main"
@@ -135,8 +161,9 @@
             android:text="Volver"
             android:textSize="18sp"
             android:padding="16dp"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF" />
+            android:background="@drawable/button_border_selector"
+        android:textColor="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
     </LinearLayout>
-
 </LinearLayout>

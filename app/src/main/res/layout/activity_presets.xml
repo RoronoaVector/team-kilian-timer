@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:gravity="center_horizontal"> <!-- Centra todos los elementos horizontalmente -->
+        android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,7 +18,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:background="@null"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,10 +34,13 @@
                 android:layout_weight="1"
                 android:text="5 x 7min x 90seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginEnd="8dp" />
+                android:layout_marginEnd="8dp"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
 
             <TextView
                 android:id="@+id/tv_preset_2"
@@ -45,9 +49,12 @@
                 android:layout_weight="1"
                 android:text="3 x 5min x 60seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,10 +70,13 @@
                 android:layout_weight="1"
                 android:text="4 x 3min x 30seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginEnd="8dp" />
+                android:layout_marginEnd="8dp"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
 
             <TextView
                 android:id="@+id/tv_preset_4"
@@ -75,9 +85,12 @@
                 android:layout_weight="1"
                 android:text="6 x 2min x 45seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,10 +106,13 @@
                 android:layout_weight="1"
                 android:text="8 x 1min x 15seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginEnd="8dp" />
+                android:layout_marginEnd="8dp"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
 
             <TextView
                 android:id="@+id/tv_preset_6"
@@ -105,9 +121,12 @@
                 android:layout_weight="1"
                 android:text="2 x 10min x 120seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -123,10 +142,13 @@
                 android:layout_weight="1"
                 android:text="10 x 4min x 60seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginEnd="8dp" />
+                android:layout_marginEnd="8dp"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
 
             <TextView
                 android:id="@+id/tv_preset_8"
@@ -135,9 +157,12 @@
                 android:layout_weight="1"
                 android:text="7 x 6min x 90seg"
                 android:textSize="18sp"
-                android:textColor="#999999"
+                android:textColor="@color/text_color_selector"
                 android:padding="12dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
         </LinearLayout>
 
         <!-- Botones alineados horizontalmente y centrados -->
@@ -155,9 +180,11 @@
                 android:text="Iniciar Entrenamiento"
                 android:textSize="18sp"
                 android:padding="16dp"
-                android:backgroundTint="#4CAF50"
-                android:textColor="#FFFFFF"
-                android:layout_marginEnd="16dp" />
+                android:background="@drawable/button_border_selector"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
             <Button
                 android:id="@+id/btn_volver_main"
@@ -166,8 +193,10 @@
                 android:text="Volver"
                 android:textSize="18sp"
                 android:padding="16dp"
-                android:backgroundTint="#4CAF50"
-                android:textColor="#FFFFFF" />
+                android:background="@drawable/button_border_selector"
+            android:textColor="#FFFFFF"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

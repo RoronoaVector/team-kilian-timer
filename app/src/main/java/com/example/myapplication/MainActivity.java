@@ -3,12 +3,11 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import android.os.Handler;
-import android.widget.Button;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,16 +29,25 @@ public class MainActivity extends Activity {
         btnConfiguracion = findViewById(R.id.btn_configuracion);
         btnPresets = findViewById(R.id.btn_presets);
 
-        btnConfiguracion.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ConfiguracionActivity.class);
-            startActivity(intent);
+        // Configurar OnClickListener para btnConfiguracion
+        btnConfiguracion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ConfiguracionActivity.class);
+                startActivity(intent);
+            }
         });
 
-        btnPresets.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PresetsActivity.class);
-            startActivity(intent);
+        // Configurar OnClickListener para btnPresets
+        btnPresets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PresetsActivity.class);
+                startActivity(intent);
+            }
         });
 
+        // Configurar actualización de la hora
         handler = new Handler(Looper.getMainLooper());
         actualizarHoraRunnable = new Runnable() {
             @Override

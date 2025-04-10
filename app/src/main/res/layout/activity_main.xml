@@ -27,19 +27,23 @@
             android:id="@+id/btn_configuracion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/settings_icon"
+            android:src="@drawable/config_selector"
             android:background="@android:color/transparent"
             android:padding="16dp"
             android:contentDescription="Configuración"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <ImageButton
             android:id="@+id/btn_presets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/presets_icon"
+            android:src="@drawable/presets_selector"
             android:background="@android:color/transparent"
             android:padding="16dp"
-            android:contentDescription="Presets" />
+            android:contentDescription="Presets"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
     </LinearLayout>
 </LinearLayout>

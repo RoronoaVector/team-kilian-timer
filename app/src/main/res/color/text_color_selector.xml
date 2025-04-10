@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color cuando el TextView tiene el foco -->
+    <item android:state_focused="true" android:color="#FFFFFF" /> <!-- Blanco al estar seleccionado -->
+    <!-- Color normal -->
+    <item android:color="#999999" /> <!-- Gris como en el diseño original -->
+</selector>

@@ -80,7 +80,7 @@ public class ConfiguracionActivity extends Activity {
         // Botón para iniciar el entrenamiento
         btnConfirmar.setOnClickListener(v -> {
             long duracionAsaltoMs = duracionAsaltoSegundos * 1000;
-            long descansoMs = descansoSegundos * 1000;
+            long descansoMs = descansoSegundos * 1000L;
 
             Intent intent = new Intent(ConfiguracionActivity.this, TemporizadorActivity.class);
             intent.putExtra("numeroAsaltos", numeroAsaltos);

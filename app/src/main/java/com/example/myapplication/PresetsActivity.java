@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -29,44 +30,59 @@ public class PresetsActivity extends Activity {
 
         // Configurar clics para los presets
         for (TextView preset : presets) {
-            preset.setOnClickListener(v -> {
-                if (presetSeleccionado != null) {
-                    presetSeleccionado.setBackgroundColor(0xFFE0E0E0);
+            preset.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Si ya hay un preset seleccionado, puedes resetear su estado visual (opcional)
+                    if (presetSeleccionado != null) {
+                        presetSeleccionado.setTextColor(0xFF999999); // Gris original
+                    }
+                    presetSeleccionado = (TextView) v;
+                    // Opcional: Cambiar el color manualmente al seleccionarlo
+                    presetSeleccionado.setTextColor(0xFF81C784); // Verde claro para indicar selección
                 }
-                presetSeleccionado = (TextView) v;
-                presetSeleccionado.setBackgroundColor(0xFF81C784);
             });
         }
 
         // Botón para iniciar el entrenamiento
-        btnIniciar.setOnClickListener(v -> {
-            if (presetSeleccionado == null) {
-                presetSeleccionado = presets[0];
-                presetSeleccionado.setBackgroundColor(0xFF81C784);
+        btnIniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (presetSeleccionado == null) {
+                    presetSeleccionado = presets[0];
+                    presetSeleccionado.setTextColor(0xFF81C784); // Verde claro
+                }
+
+                String texto = presetSeleccionado.getText().toString();
+                String[] partes = texto.split(" x ");
+
+                int numeroAsaltos = Integer.parseInt(partes[0]);
+                int duracionMinutos = Integer.parseInt(partes[1].replace("min", ""));
+                int descansoSegundos = Integer.parseInt(partes[2].replace("seg", ""));
+
+                long duracionAsaltoMs = duracionMinutos * 60 * 1000;
+                long descansoMs = descansoSegundos * 1000;
+
+                Intent intent = new Intent(PresetsActivity.this, TemporizadorActivity.class);
+                intent.putExtra("numeroAsaltos", numeroAsaltos);
+                intent.putExtra("duracionAsalto", duracionAsaltoMs);
+                intent.putExtra("descanso", descansoMs);
+                startActivity(intent);
             }
-
-            String texto = presetSeleccionado.getText().toString();
-            String[] partes = texto.split(" x ");
-
-            int numeroAsaltos = Integer.parseInt(partes[0]);
-            int duracionMinutos = Integer.parseInt(partes[1].replace("min", ""));
-            int descansoSegundos = Integer.parseInt(partes[2].replace("seg", ""));
-
-            long duracionAsaltoMs = duracionMinutos * 60 * 1000;
-            long descansoMs = descansoSegundos * 1000;
-
-            Intent intent = new Intent(PresetsActivity.this, TemporizadorActivity.class);
-            intent.putExtra("numeroAsaltos", numeroAsaltos);
-            intent.putExtra("duracionAsalto", duracionAsaltoMs);
-            intent.putExtra("descanso", descansoMs);
-            startActivity(intent);
         });
 
         // Botón para volver a MainActivity
-        btnVolverMain.setOnClickListener(v -> {
-            Intent intent = new Intent(PresetsActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish(); // Opcional: cierra esta actividad
+        btnVolverMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PresetsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish(); // Opcional: cierra esta actividad
+            }
         });
+
+        // Opcional: Dar foco inicial al primer preset para evitar el doble clic inicial
+        presets[0].requestFocus();
     }
+
 }
